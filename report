@@ -1,0 +1,7 @@
+	In this project we have to implement a 3D viewing and a shading model. 
+	The view is the camera which we can move around the 3d object by pressing the W-A-D-S keys on the keyboard. To do that I had to implement the GetViewMatrix() function located on Camera.h. Basically this function will return the position and the direction of the camera. 
+	Then I implemented the shaders in phong.vs and phong.frag. In these files I built a lightning model consist of 3 components: ambient, diffuse, and specular lighting.
+	Adding ambient lighting to the scene was really easy. We take the light's color, multiply it with a small constant ambient factor, multiply this with the object's color, and use that as the fragment's color in the cube object's shader. 
+	to calculate diffuse lighting I used the Normal vector( a vector that is perpendicular to the vertex' surface), The directed light ray (a direction vector that is the difference vector between the light's position and the fragment's position) To calculate this light ray we need the light's position vector and the fragment's position vector. 
+	Specular lighting is based on the reflective properties of surfaces. If we think of the object's surface as a mirror, the specular lighting is the strongest wherever we would see the light reflected on the surface.
+And by following all these steps I was able to generate the image shown on hw3.png
